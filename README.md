@@ -1,6 +1,4 @@
-#### Exercise Three: Looping through data to create a simple bar chart.
-
-You can find a working link to the page we created in class here: [http://chriscanipe.com/news-apps-class-2016/exercise-three/](http://chriscanipe.com/news-apps-class-2016/exercise-three/).
+#### Exercise Three: Looping through data to create [a simple bar chart](http://chriscanipe.com/news-apps-class-2016/exercise-three/).
 
 We loaded up our Columbia Public Schools JSON in class Tuesday and iterated through the rows using a "for loop." We touched on three main concepts:
 
