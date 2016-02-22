@@ -22,3 +22,9 @@
 	padding: 4px;
 	float: left;
 }
+
+
+/* ADDED CLASS NAME FOR 2015 TO MAKE IT RED */
+.bar-item.year2015 .bar {
+	background-color: red;
+}

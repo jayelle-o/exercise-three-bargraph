@@ -57,8 +57,10 @@ function loopThroughData(schoolsData) {
 			//All I'm doing here is writing some markup. The markup is exactly the same each time...
 			//...except for three variables: the width of the bar (calculated above), the year and the graduation rate.
 			//So we fill those in each time through the loop.
+
+			//!! Added a class name for the year !!//
 			$(".chart").append(
-				"<div class='bar-item'>"+
+				"<div class='bar-item year"+year+"'>"+
 					"<div class='bar' style='width: "+barWidth+"px'>"+year+"</div>"+
 					"<div class='val'>"+gradPct+"%</div>"+
 				"</div>"	
