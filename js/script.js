@@ -1,6 +1,4 @@
 
-//Nothing happens on the page until the document is loaded.
-//Once loaded, we call the getData() function, defined below.
 $(document).ready(function() {
 	getData();
 });
@@ -19,8 +17,6 @@ function getData() {
 	});
 }
 
-
-
 //This is the function we'll use to draw our chart using the schools data.
 //In order to use it in the function, we need to "catch" the data we passed from the other function
 //by putting it in the parenthesis. In class we called is "s" to make the point that...
@@ -34,11 +30,13 @@ function loopThroughData(schoolsData) {
 	// 2) If i is less than the length of the data.movies array, proceed.
 	// 3) Add 1 to i. (i++ is shorthand for i = i + 1)
 
-	for (i=0; i<schoolsData.length; i++) {
+	for (i=27; i>13; i--) {
 
 		var schoolName = schoolsData[i]["SCHOOL_NAME"];
 		var year = schoolsData[i]["YEAR"];
-		var gradPct = schoolsData[i]["GRADUATES_PCT"];
+		var blackgradPct = schoolsData[i]["GRADUATES_BLACK_PCT"];
+		var whitegradPct = schoolsData[i]["GRADUATES_WHITE_PCT"];
+		var black_white = 100*blackgradPct/whitegradPct;
 
 		//If graduation percent is less thatn 50%...
 		//We use the `<` operator to test for values less than 50%
@@ -49,7 +47,11 @@ function loopThroughData(schoolsData) {
 		// 	console.log(year, schoolName, gradPct);
 		// }
 
-		var barWidth = gradPct * 10;
+		//var barWidth1 = blackgradPct * 10;
+
+		//var barWidth2 = whitegradPct * 10;
+
+		var barWidth = Math.round(black_white) * 5;
 
 		//If the school name matches the one we're looking for, add some markup onto our page.
 		if (schoolName === "FREDERICK DOUGLASS HIGH") {
@@ -62,11 +64,16 @@ function loopThroughData(schoolsData) {
 			$(".chart").append(
 				"<div class='bar-item year"+year+"'>"+
 					"<div class='bar' style='width: "+barWidth+"px'>"+year+"</div>"+
-					"<div class='val'>"+gradPct+"%</div>"+
+					"<div class='val'>"+ Math.round(black_white)+":100</div>"+
 				"</div>"	
 			);
 
-			//See the style.css document for CSS to make it pretty.
+			//$(".chart").append(
+				//"<div class='bar-item year"+year+"'>"+
+					//"<div class='bar' style='width: "+barWidth2+"px'>"+year+"</div>"+
+					//"<div class='val'>"+whitegradPct+"%</div>"+
+				//"</div>"	
+			
 		}
 
 

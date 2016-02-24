@@ -1,3 +1,7 @@
+.div {
+	outline: 1px solid red;
+}
+
 .chart {
   height: 500px;
 }
@@ -19,7 +23,7 @@
 	margin-top: 1px;
 	outline: 1px solid white;
 	color: white;
-	padding: 4px;
+	padding: 2px;
 	float: left;
 }
 
